@@ -10,7 +10,7 @@ interface OverviewState {
 }
 
 export default class Overview extends Component<OverviewProps, OverviewState> {
-    state = {
+    state: OverviewState = {
         aboutHover: false,
         portfolioHover: false,
         hobbiesHover: false
