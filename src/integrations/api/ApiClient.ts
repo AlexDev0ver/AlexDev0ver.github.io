@@ -11,7 +11,9 @@ class ApiClient {
     }
 
     askQuestion(question: string): Promise<string> {
-        return axios.post(`/ask`, question).then(res => res.data);
+        return axios.post(`/questions`, {
+            question
+        }).then(res => res.data.message)
     }
 }
 
