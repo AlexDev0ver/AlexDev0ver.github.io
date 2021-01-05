@@ -3,11 +3,15 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as CSS from 'csstype';
 
+interface props {
+    component: string
+}
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<props> = ({component = ""}) => {
 
     const [sidebarToggle, changeSidebarToggle] = useState(false);
     const [hoverBack, hoveredBack] = useState(false);
+    const [hoverAbout, hoveredAbout] = useState(false);
     const [hoverPortfolio, hoveredPortfolio] = useState(false);
     const [hoverHobbies, hoveredHobbies] = useState(false);
 
@@ -29,6 +33,7 @@ const Sidebar: React.FC = () => {
         outline:"none"
     }
 
+
     return (
         <div id="sidebar" className="d-none d-sm-flex flex-column justify-content-evenly align-items-center"
              style={sidebarStyle}>
@@ -41,12 +46,20 @@ const Sidebar: React.FC = () => {
                   style={{textDecoration:"none", borderBottom:`${hoverBack ? "2px solid #fff" : "none"}`, marginBottom:`${hoverBack ? "-2px" : "0"}`}}
                   onMouseEnter={() => hoveredBack(true)}
                   onMouseLeave={() => hoveredBack(false)}>Back</Link>
-            <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder`}
+
+            <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder ${component === "about" ? "d-none" : ""}`}
+                to="/about"
+                style={{textDecoration:"none", borderBottom:`${hoverAbout ? "2px solid #fff" : "none"}`, marginBottom:`${hoverAbout? "-2px" : "0"}`}}
+                onMouseEnter={() => hoveredAbout(true)}
+                onMouseLeave={() => hoveredAbout(false)}>About Me</Link>
+
+            <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder ${component === "portfolio" ? "d-none" : ""}`}
                   to="/portfolio"
                   style={{textDecoration:"none", borderBottom:`${hoverPortfolio ? "2px solid #fff" : "none"}`, marginBottom:`${hoverPortfolio ? "-2px" : "0"}`}}
                   onMouseEnter={() => hoveredPortfolio(true)}
                   onMouseLeave={() => hoveredPortfolio(false)}>Portfolio</Link>
-            <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder`}
+
+            <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder ${component === "hobbies" ? "d-none" : ""}`}
                   to="/hobbies"
                   style={{textDecoration:"none", borderBottom:`${hoverHobbies ? "2px solid #fff" : "none"}`, marginBottom:`${hoverHobbies ? "-2px" : "0"}`}}
                   onMouseEnter={() => hoveredHobbies(true)}

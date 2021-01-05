@@ -55,6 +55,7 @@
     left: 199px;
     height: 100vh;
     border-right: 1px solid #32E14C;
+	box-shadow: 6px 0 6px 0px #32E14C;
 }
 
 .horizontal-line {
@@ -63,6 +64,7 @@
     left: 0;
     width: 100%;
     border-top: 1px solid #32E14C;
+	box-shadow: 0 6px 6px 0px #32E14C;
 }
 
 .aboutContainer {

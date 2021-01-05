@@ -43,7 +43,16 @@ export default class About extends Component<AboutProps, AboutState> {
     render() {
         if (!this.state.questions.length) {
             return (
-                <div>data processing...</div>
+                <div className="container-fluid overflow-hidden d-flex flex-column justify-content-center aboutContainer">
+                    <div className="vertical-line d-none d-sm-block"></div>
+                    <div className="horizontal-line d-none d-sm-block"></div>
+                    <h1 className="text-center mb-4 pt-5" style={{ marginLeft:"-15px", color: "#2ca93e", fontSize:"6vh"}}>About Me</h1>
+                    <div className="text-center scrollbarStyle questionContainer overflow-auto container-fluid col-12 col-md-8 col-xl-5 col-xxl-5">
+                        data processing...
+                    </div>
+                    <Sidebar component="about"/>
+                    <Link to="/" className="d-md-none d-xs-flex mt-4 justify-content-center align-self-center" style={{textDecoration:"none", color:"#2c3033"}}>Back</Link>
+                </div>
             )
         }
 
@@ -65,7 +74,7 @@ export default class About extends Component<AboutProps, AboutState> {
                         <button onClick={() => this.sendData()} className="btn btn-outline-dark w-25 mx-auto my-4">Send</button>
                     </div>
                 </div>
-                <Sidebar/>
+                <Sidebar component="about"/>
                 <Link to="/" className="d-md-none d-xs-flex mt-4 justify-content-center align-self-center" style={{textDecoration:"none", color:"#2c3033"}}>Back</Link>
             </div>
         )
