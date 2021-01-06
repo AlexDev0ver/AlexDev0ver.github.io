@@ -18,7 +18,7 @@ const Sidebar: React.FC<props> = ({component = ""}) => {
     const sidebarStyle : CSS.Properties = {
         backgroundColor:"#000000",
         opacity:"0.6",
-        position:"absolute",
+        position:"fixed",
         top:"0",
         left:"0",
         width:`${sidebarToggle ? "200px" : "50px"}`,
