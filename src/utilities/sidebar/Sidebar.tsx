@@ -45,7 +45,7 @@ const Sidebar: React.FC<props> = ({component = ""}) => {
                   to="/"
                   style={{textDecoration:"none", borderBottom:`${hoverBack ? "2px solid #fff" : "none"}`, marginBottom:`${hoverBack ? "-2px" : "0"}`}}
                   onMouseEnter={() => hoveredBack(true)}
-                  onMouseLeave={() => hoveredBack(false)}>Back</Link>
+                  onMouseLeave={() => hoveredBack(false)}>Overview</Link>
 
             <Link className={`${!sidebarToggle ? "d-none" : ""} w-100 text-center text-light fw-bolder ${component === "about" ? "d-none" : ""}`}
                 to="/about"
