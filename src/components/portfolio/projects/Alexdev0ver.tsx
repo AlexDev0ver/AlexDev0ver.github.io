@@ -29,7 +29,7 @@ const Alexdev0ver: React.FC = () => {
         opacity: 0,
         transition: "1.5s",
         position: "absolute",
-        pointerEvents: "none"
+        pointerEvents: "none",
     }
 
     const fadein : CSS.Properties = {
@@ -39,40 +39,40 @@ const Alexdev0ver: React.FC = () => {
 
 
     return (
-        <div className="d-flex align-items-center" style={{height:"100vh", background:"no-repeat url(/img/building.jpg)"}}>
+        <div className="d-flex align-items-center overflow-hidden" style={{color:"#b5b5b5", fontSize:"2.3vh", height:"100vh", background:"no-repeat url(/img/alexdev0ver-background.jpg)", backgroundSize: "cover", backgroundColor: codeside ? "#faff00" : "#198754", backgroundBlendMode: codeside ? "darken" : infoside ? "hard-light" : "normal"}}>
             <div className={`${codeside ? "w-75" : infoside ? "w-25" : "w-50"} h-100 d-flex flex-column align-items-center justify-content-center px-4 border-end`}
                  onClick={() => toggleCodeside()}
                  style={{ transition:"1s"}}>
                     <h5 style={codeside ? fadeout : fadein}>
-                        <a href="https://github.com/AlexDev0ver/alexdev0ver.github.io">Github</a>
+                        <a style={{textDecoration: "none", color:"#0dcaf0", fontSize:"3vh"}} href="https://github.com/AlexDev0ver/alexdev0ver.github.io">Github</a>
                     </h5>
 
                     <div style={codeside || infoside ? fadeout : fadein}>
                         <span>Single page application based on React+Typescript</span>
                     </div>
 
-                    <div className="d-flex flex-column" style={!codeside ? fadeout : fadein }>
-                        <div>
-                            <a href="https://github.com/AlexDev0ver/alexdev0ver.github.io">
+                    <div className="d-flex flex-column align-items-center" style={!codeside ? fadeout : fadein }>
+                        <div className="d-flex align-items-center flex-column">
+                            <a style={{textDecoration: "none", color:"#0dcaf0", fontSize:"3vh"}} href="https://github.com/AlexDev0ver/alexdev0ver.github.io">
                                 <span>Frontend:</span>
                             </a>
-                            <ul className="d-flex my-4 align-items-baseline" style={{listStyle:"none"}}>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/html-icon.svg" alt="HTML" /></li>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/css-icon.svg" alt="CSS" /></li>
-                                <li className="px-2"><img style={{width:"125px", height:"125px"}} src="/img/react-icon.svg" alt="ReactJS" /></li>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/javascript-icon.svg" alt="Javascript" /></li>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/typescript-icon.svg" alt="Typescript" /></li>
+                            <ul className="d-flex my-4 align-items-baseline flex-wrap" style={{listStyle:"none"}}>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/html-icon.svg" alt="HTML" /></li>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/css-icon.svg" alt="CSS" /></li>
+                                <li className="px-2"><img style={{width:"12vh", height:"12vh"}} src="/img/react-icon.svg" alt="ReactJS" /></li>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/javascript-icon.svg" alt="Javascript" /></li>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/typescript-icon.svg" alt="Typescript" /></li>
                             </ul>
                         </div>
 
-                        <div>
-                            <a href="https://github.com/AlexDev0ver/alexdev0verAPI">
+                        <div className="d-flex align-items-center flex-column">
+                            <a style={{textDecoration: "none" , color:"#0dcaf0", fontSize:"3vh"}} href="https://github.com/AlexDev0ver/alexdev0verAPI">
                                 <span>Backend:</span>
                             </a>
-                            <ul className="d-flex my-4 align-items-baseline" style={{listStyle:"none"}}>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/nodejs-icon.svg" alt="NodeJS" /></li>
-                                <li className="px-2"><img style={{width:"125px", height:"125px"}} src="/img/mongodb.svg" alt="MongoDB" /></li>
-                                <li className="px-2"><img style={{width:"75px", height:"75px"}} src="/img/heroku-icon.svg" alt="Heroku" /></li>
+                            <ul className="d-flex my-4 align-items-baseline flex-wrap" style={{listStyle:"none"}}>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/nodejs-icon.svg" alt="NodeJS" /></li>
+                                <li className="px-2"><img style={{width:"12vh", height:"12vh"}} src="/img/mongodb.svg" alt="MongoDB" /></li>
+                                <li className="px-2"><img style={{width:"10vh", height:"10vh"}} src="/img/heroku-icon.svg" alt="Heroku" /></li>
                             </ul>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ const Alexdev0ver: React.FC = () => {
             <div className={`${infoside ? "w-75" : codeside ? "w-25" : "w-50"} h-100 d-flex flex-column align-items-center justify-content-center px-4`}
                  onClick={() => toggleInfoside()}
                  style={{ transition:"1s" }}>
-                     <h5 className="my-2">alexdev0ver.io</h5>
+                     <h5 className="my-2" style={{color:"#0dcaf0", fontSize:"3vh"}}>alexdev0ver.io</h5>
                      <div style={codeside || infoside ? fadeout : fadein}>
                          <span>Here suppose to be a link on live mode, but you already here.</span>
                      </div>
